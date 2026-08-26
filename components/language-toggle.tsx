@@ -24,7 +24,6 @@ export function LanguageToggle() {
 
   return <div className="language-toggle" aria-label="Language selection">
     <button type="button" className={language === 'en' ? 'is-active' : ''} onClick={() => selectLanguage('en')} aria-pressed={language === 'en'}>EN</button>
-    <span aria-hidden="true">/</span>
     <button type="button" className={language === 'ko' ? 'is-active' : ''} onClick={() => selectLanguage('ko')} aria-pressed={language === 'ko'}>한</button>
   </div>;
 }
