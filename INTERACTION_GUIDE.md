@@ -19,3 +19,10 @@ The live page has a persistent compact header, oversized statement typography, l
 
 ## Accessibility
 Every media item needs alt text. Focus styles must be visible in grayscale. Hover is enhancement only; all work titles and routes remain keyboard reachable.
+
+## Content integrity and loading states
+- A work card may present color only when it is backed by a published `works` record with an original artwork image, title, year, material, and alt text.
+- Before that record exists, the public index uses a grayscale archive plate labelled as documentation pending. Placeholder imagery must never be paired with invented titles, materials, years, or artist claims.
+- Every work frame reserves its final aspect ratio before the image loads. Remote artwork uses a grayscale skeleton/plate until the image is ready; it must not create a blank page region.
+- At 390px, the hero headline is capped at 72px, has at least `-0.04em` tracking, and its first line is an intentional non-breaking editorial unit (`Things that`).
+- Header links preserve their 11px catalogue-label appearance but expose a 44px minimum pointer and touch target. Visible keyboard focus uses a 1px warm-white outline with 5px offset.

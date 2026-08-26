@@ -26,5 +26,9 @@ export function PublishedWorks() {
     });
   }, []);
 
-  return <section className="works-grid" aria-label="Artwork index">{works.map((work, index) => <WorkCard href={`/works/${work.slug}`} image={work.image} index={index} title={work.title} year={work.year} medium={work.medium} key={work.id}/>)}</section>;
+  const isPreview = works === fallbackWorks;
+  return <section className="works-area" aria-label="Artwork index">
+    {isPreview && <p className="archive-notice">ARCHIVE PREVIEW — ORIGINAL ARTWORK IMAGES AND CATALOGUE DATA ARE BEING PREPARED.</p>}
+    <div className="works-grid">{works.map((work, index) => <WorkCard href={`/works/${work.slug}`} image={work.image} index={index} title={work.title} year={work.year} medium={work.medium} isPlaceholder={isPreview} key={work.id}/>)}</div>
+  </section>;
 }

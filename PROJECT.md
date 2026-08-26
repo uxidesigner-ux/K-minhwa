@@ -12,7 +12,11 @@ K-minhwa is a contemporary portfolio and moving archive for a Korean minhwa arti
 - `/admin` — authenticated content studio for works, artist profile, homepage, media, and ordering.
 
 ## Content model boundaries
-The public site reads published records only. Admin edits draft content, uploads media, arranges order, and publishes. Firebase Auth, Firestore, and Storage are the planned source of truth; local content is only a prototype fallback.
+The public site reads published records only. Admin edits draft content, uploads media, arranges order, and publishes. Firebase Auth and Firestore are the configured source of truth; Storage remains unavailable until the Firebase billing account is enabled, so the admin currently accepts verified media URLs rather than simulating uploads.
+
+### Catalogue integrity
+
+No stock image may be presented as a K-minhwa artwork. Until original artwork photography/video and verified catalogue data are published in Firestore, the site renders labeled grayscale archive plates. This is intentional: the home hero can use the supplied artist video, but every work card must be traceable to an original image, title, year, material, and alt text before it receives the artwork treatment.
 
 ## Direction
 UI is black, white, and grayscale. Artwork media can retain color and is the only chromatic field. Typography is large, expressive, and mostly sans with selective serif contrast. No decorative minhwa clichés.

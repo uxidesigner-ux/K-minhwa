@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Archive plate 03</title><desc id="desc">A grayscale placeholder reserved for original artwork documentation.</desc>
+  <rect width="1600" height="1200" fill="#161616"/><rect x="55" y="55" width="1490" height="1090" fill="none" stroke="#f4f3ef" stroke-opacity=".28"/>
+  <path d="M390 850c0-350 205-515 410-515s410 165 410 515" fill="none" stroke="#f4f3ef" stroke-opacity=".75" stroke-width="3"/><path d="M280 850h1040" stroke="#f4f3ef" stroke-opacity=".32" stroke-width="2"/><circle cx="800" cy="595" r="145" fill="none" stroke="#f4f3ef" stroke-opacity=".32" stroke-width="2"/>
+  <text x="95" y="130" fill="#f4f3ef" fill-opacity=".7" font-family="monospace" font-size="22" letter-spacing="4">K—MINHWA / ARCHIVE PLATE 03</text>
+  <text x="95" y="1080" fill="#f4f3ef" fill-opacity=".48" font-family="monospace" font-size="18" letter-spacing="3">ORIGINAL ARTWORK DOCUMENTATION PENDING</text>
+</svg>
