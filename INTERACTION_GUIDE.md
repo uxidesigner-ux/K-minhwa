@@ -28,7 +28,7 @@ Every media item needs alt text. Focus styles must be visible in grayscale. Hove
 - Header links preserve their 11px catalogue-label appearance but expose a 44px minimum pointer and touch target. Visible keyboard focus uses a 1px warm-white outline with 5px offset.
 
 ## Home entry sequence
-- First visit in a browser session: black overlay → a visible 00–100% progress count lasting at least 3 seconds → K-minhwa cell mark → monochrome cell field → hero reveal. Desktop target: 4.7–5.0 seconds; the reveal waits no longer than 1.2 seconds for the poster and fonts, but the count remains on screen for its full minimum duration.
+- First visit in a browser session: black overlay → a visible 00–92% count lasting at least 3 seconds and waiting for hero-video `canplaythrough` → 100% → K-minhwa cell mark → monochrome cell field → fog-like reveal. The video is requested with `preload="auto"`; slower video loading extends the waiting phase rather than pretending completion.
 - Returning visit in the same session: 180ms reveal only. `prefers-reduced-motion` uses an 80ms fade and never displays the full sequence.
 - The entry layer is `aria-hidden`, holds no focusable controls, and is removed at completion. Hero content remains in document order throughout.
 - The cell field is an abstract catalogue grid, not a reproduction of any reference logo or graphic. Desktop is capped at 72 cells; compact screens show 24.

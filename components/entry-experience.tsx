@@ -20,6 +20,24 @@ function waitForImage(source: string) {
   });
 }
 
+function waitForHeroVideo() {
+  return new Promise<boolean>((resolve) => {
+    const video = document.querySelector<HTMLVideoElement>('.hero-video');
+    if (!video) { resolve(false); return; }
+    if (video.readyState >= HTMLMediaElement.HAVE_ENOUGH_DATA) { resolve(true); return; }
+    const finish = (ready: boolean) => {
+      video.removeEventListener('canplaythrough', onReady);
+      video.removeEventListener('error', onError);
+      resolve(ready);
+    };
+    const onReady = () => finish(true);
+    const onError = () => finish(false);
+    video.addEventListener('canplaythrough', onReady, { once: true });
+    video.addEventListener('error', onError, { once: true });
+    video.load();
+  });
+}
+
 export function EntryExperience({ onComplete }: EntryExperienceProps) {
   const [phase, setPhase] = useState<Phase>('loading');
   const [progress, setProgress] = useState(0);
@@ -53,19 +71,19 @@ export function EntryExperience({ onComplete }: EntryExperienceProps) {
 
     const minimumLoading = 3000;
     const startedAt = performance.now();
-    let assetsReady = false;
-    const assetPromise = Promise.race([
-      Promise.all([
+    let videoReady = false;
+    let videoFailed = false;
+    const assetPromise = Promise.all([
         document.fonts?.ready ?? Promise.resolve(),
         waitForImage('/media/hero-poster.jpg'),
-      ]),
-      new Promise<void>((resolve) => schedule(resolve, 1200)),
-    ]).then(() => { assetsReady = true; });
+        waitForHeroVideo(),
+      ]).then(([, , ready]) => { videoReady = ready; videoFailed = !ready; });
 
     const renderProgress = (now: number) => {
       if (cancelled) return;
       const elapsed = now - startedAt;
-      const settledProgress = assetsReady ? Math.min(100, (elapsed / minimumLoading) * 100) : Math.min(96, (elapsed / minimumLoading) * 96);
+      const minimumProgress = Math.min(92, (elapsed / minimumLoading) * 92);
+      const settledProgress = (videoReady || videoFailed) && elapsed >= minimumLoading ? 100 : minimumProgress;
       setProgress(Math.round(settledProgress));
       if (settledProgress >= 100) {
         setPhase('mark');
@@ -92,5 +110,6 @@ export function EntryExperience({ onComplete }: EntryExperienceProps) {
     <p className="entry-progress">{String(progress).padStart(2, '0')}<span>%</span></p>
     <div className="entry-mark"><strong>K</strong><span>K—MINHWA</span></div>
     <div className="entry-grid">{INTRO_CELLS.map((cell) => <i key={cell} style={{ '--cell': cell } as CSSProperties} />)}</div>
+    <div className="entry-fog"><i/><i/><i/></div>
   </div>;
 }
