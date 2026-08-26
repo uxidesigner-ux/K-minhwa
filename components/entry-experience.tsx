@@ -90,7 +90,7 @@ export function EntryExperience({ onComplete }: EntryExperienceProps) {
 
   return <div className={`entry-experience entry-experience--${phase}`} aria-hidden="true">
     <p className="entry-progress">{String(progress).padStart(2, '0')}<span>%</span></p>
-    <div className="entry-mark"><span className="entry-mark__cells"><i/><i/><i/><i/><i/></span><span>K—MINHWA</span></div>
+    <div className="entry-mark"><strong>K</strong><span>K—MINHWA</span></div>
     <div className="entry-grid">{INTRO_CELLS.map((cell) => <i key={cell} style={{ '--cell': cell } as CSSProperties} />)}</div>
   </div>;
 }
