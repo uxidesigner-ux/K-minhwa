@@ -26,3 +26,14 @@ Every media item needs alt text. Focus styles must be visible in grayscale. Hove
 - Every work frame reserves its final aspect ratio before the image loads. Remote artwork uses a grayscale skeleton/plate until the image is ready; it must not create a blank page region.
 - At 390px, the hero headline is capped at 72px, has at least `-0.04em` tracking, and its first line is an intentional non-breaking editorial unit (`Things that`).
 - Header links preserve their 11px catalogue-label appearance but expose a 44px minimum pointer and touch target. Visible keyboard focus uses a 1px warm-white outline with 5px offset.
+
+## Home entry sequence
+- First visit in a browser session: black overlay → 00–100% asset-aware progress → K-minhwa cell mark → monochrome cell field → hero reveal. Desktop target: 3.5–4.3 seconds; the reveal must never wait longer than 1.2 seconds for the poster and fonts.
+- Returning visit in the same session: 180ms reveal only. `prefers-reduced-motion` uses an 80ms fade and never displays the full sequence.
+- The entry layer is `aria-hidden`, holds no focusable controls, and is removed at completion. Hero content remains in document order throughout.
+- The cell field is an abstract catalogue grid, not a reproduction of any reference logo or graphic. Desktop is capped at 72 cells; compact screens show 24.
+
+## Hero particles
+- Fine-pointer desktops only, after entry has completed. Default cursor remains visible.
+- Canvas is scoped to the hero and uses `pointer-events: none`; particles are warm-white dots within a maximum 176px diameter field, with 360–660ms lives.
+- Cap at 56 particles, 5 emissions per pointer update, and DPR 1.5. Render only while particles exist; cancel the animation frame and clear the canvas for hidden tabs, touch, or reduced motion.
