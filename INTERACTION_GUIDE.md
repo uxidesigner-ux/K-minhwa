@@ -37,3 +37,9 @@ Every media item needs alt text. Focus styles must be visible in grayscale. Hove
 - Fine-pointer desktops only, after entry has completed. Default cursor remains visible.
 - Canvas is scoped to the hero and uses `pointer-events: none`; particles are warm-white dots within a maximum 176px diameter field, with 360–660ms lives.
 - Cap at 56 particles, 5 emissions per pointer update, and DPR 1.5. Render only while particles exist; cancel the animation frame and clear the canvas for hidden tabs, touch, or reduced motion.
+
+## WebGL distortion and custom cursor
+- WebGL is restricted to the hero video texture. A fine-pointer desktop can produce a local UV refraction around the pointer (maximum 3.2% displacement within a 32% radial field); it never shifts text, CTA, header, or artwork metadata.
+- The original video remains in the DOM as a fallback. If WebGL or video texture setup fails, the canvas stays inert and the standard video/poster remains visible.
+- The custom cursor is a monochrome 36px ring with a 54px interactive state. It replaces the native cursor only for fine pointers, and is absent for touch, mobile, and reduced-motion users.
+- WebGL uses a DPR ceiling of 1.5, a low-power context, and stops its render loop while the document is hidden.
