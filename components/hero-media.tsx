@@ -45,7 +45,7 @@ export function HeroMedia() {
     };
   }, []);
   return <div ref={mediaRef} className="hero-image" aria-hidden="true">
-    <video ref={videoRef} className="hero-video" autoPlay={canAutoplay} loop muted playsInline preload="metadata">
+    <video ref={videoRef} className="hero-video" autoPlay={canAutoplay} loop muted playsInline preload="metadata" poster="/media/hero-poster.jpg">
       <source src="/media/hero.mp4" type="video/mp4" />
     </video>
   </div>;
