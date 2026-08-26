@@ -10,7 +10,7 @@ const fallbackWorks: Work[] = previewWorks.map((work, index) => ({
   id: work.slug,
   ...work,
   description: '',
-  imageAlt: `${work.title}, ${work.year}`,
+    imageAlt: work.imageAlt,
   status: 'published',
   sortOrder: index,
 }));
@@ -28,7 +28,7 @@ export function PublishedWorks() {
 
   const isPreview = works === fallbackWorks;
   return <section className="works-area" aria-label="Artwork index">
-    {isPreview && <p className="archive-notice">ARCHIVE PREVIEW — ORIGINAL ARTWORK IMAGES AND CATALOGUE DATA ARE BEING PREPARED.</p>}
-    <div className="works-grid">{works.map((work, index) => <WorkCard href={`/works/${work.slug}`} image={work.image} index={index} title={work.title} year={work.year} medium={work.medium} isPlaceholder={isPreview} key={work.id}/>)}</div>
+    {isPreview && <p className="archive-notice">ARTWORK PHOTOGRAPHS / CATALOGUE TITLES, DATES, MATERIALS, AND DIMENSIONS ARE BEING CONFIRMED.</p>}
+    <div className="works-grid">{works.map((work, index) => <WorkCard href={`/works/${work.slug}`} image={work.image} imageAlt={work.imageAlt} index={index} title={work.title} year={work.year} medium={work.medium} key={work.id}/>)}</div>
   </section>;
 }
