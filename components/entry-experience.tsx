@@ -51,7 +51,7 @@ export function EntryExperience({ onComplete }: EntryExperienceProps) {
       return () => timers.forEach(window.clearTimeout);
     }
 
-    const minimumLoading = 950;
+    const minimumLoading = 3000;
     const startedAt = performance.now();
     let assetsReady = false;
     const assetPromise = Promise.race([
@@ -65,14 +65,13 @@ export function EntryExperience({ onComplete }: EntryExperienceProps) {
     const renderProgress = (now: number) => {
       if (cancelled) return;
       const elapsed = now - startedAt;
-      const naturalProgress = Math.min(88, (elapsed / minimumLoading) * 88);
-      const settledProgress = assetsReady && elapsed >= minimumLoading ? Math.min(100, 88 + ((elapsed - minimumLoading) / 180) * 12) : naturalProgress;
+      const settledProgress = assetsReady ? Math.min(100, (elapsed / minimumLoading) * 100) : Math.min(96, (elapsed / minimumLoading) * 96);
       setProgress(Math.round(settledProgress));
       if (settledProgress >= 100) {
         setPhase('mark');
-        schedule(() => setPhase('grid'), 620);
-        schedule(() => setPhase('reveal'), 1700);
-        schedule(complete, 2400);
+        schedule(() => setPhase('grid'), 480);
+        schedule(() => setPhase('reveal'), 1180);
+        schedule(complete, 1750);
         return;
       }
       frame = window.requestAnimationFrame(renderProgress);
