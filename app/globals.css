@@ -82,8 +82,8 @@
 .hero-artist-name{display:flex;align-items:baseline;gap:16px;margin:0 0 22px;color:var(--white);font-family:'Nanum Myeongjo',Georgia,serif;font-size:clamp(32px,4vw,64px);font-weight:500;letter-spacing:-.07em;line-height:.95}.hero-artist-name small{font:400 clamp(13px,1.2vw,18px)/1.2 'Apple SD Gothic Neo','Noto Sans KR','Malgun Gothic',Manrope,sans-serif;letter-spacing:-.04em;color:rgba(244,243,239,.72);white-space:nowrap}.artist-name-display{margin:0 0 clamp(34px,5vw,74px);font-family:'Nanum Myeongjo',Georgia,serif;font-size:clamp(58px,9vw,144px);font-weight:500;line-height:.84;letter-spacing:-.1em;color:var(--white)}.artist-name-display small{display:block;margin-top:14px;font-size:clamp(19px,2.2vw,34px);font-weight:400;letter-spacing:-.05em;color:var(--gray)}.artist-intro h1{margin-top:0}@media(max-width:700px){.home .hero-copy{top:18%}.hero-artist-name{gap:10px;margin-bottom:18px;font-size:clamp(30px,10vw,42px);line-height:1}.hero-artist-name small{font-size:14px}.artist-name-display{margin-bottom:34px;font-size:clamp(52px,16vw,68px);line-height:.9;letter-spacing:-.08em}.artist-name-display small{margin-top:10px;font-size:20px}.artist-intro h1{font-size:16vw}}
 
 /* Locale transitions use a moving monochrome indicator; page copy swaps to verified Korean variants. */
-.localized-text{display:contents}.localized-text__ko{display:none}html[data-language='ko'] .localized-text__en{display:none}html[data-language='ko'] .localized-text__ko{display:initial}.language-toggle{position:relative;isolation:isolate;overflow:hidden}.language-toggle::before{content:'';position:absolute;z-index:0;top:3px;bottom:3px;left:3px;width:calc(50% - 3px);border-radius:999px;background:var(--white);box-shadow:0 1px 7px rgba(0,0,0,.28);transform:translateX(0);transition:transform .34s cubic-bezier(.22,1,.36,1)}.language-toggle--ko::before{transform:translateX(100%)}.language-toggle button,.language-toggle button.is-active{position:relative;z-index:1;background:transparent;box-shadow:none}.language-toggle button.is-active{color:var(--black)}.language-toggle button:not(.is-active):hover{color:var(--white)}
-@media(max-width:700px){.home .hero-copy{top:19%}.hero-artist-name{font-size:30px;margin-bottom:14px}.hero-artist-name small{font-size:13px}.home .hero h1{font-size:clamp(56px,15vw,62px);line-height:.92}.hero-note{max-width:280px;margin-top:24px;font-size:14px;line-height:1.5}.hero-cta{margin-top:18px}.hero-work-caption{bottom:126px;font-size:10px}.hero-work-caption span:last-child{display:none}.home-footer{gap:4px 14px;padding:12px!important;font-size:10px}.home-footer a{min-height:40px;font-size:10px}.home-footer span:nth-child(2){font-size:10px}.language-toggle::before{top:4px;bottom:4px;left:4px;width:calc(50% - 4px)}}
+.localized-text{display:inline}.localized-text__en,.localized-text__ko{display:inline}.localized-text__ko{display:none!important}.localized-text--block{display:block}.localized-text--block>.localized-text__en{display:block}.localized-text--block>.localized-text__ko{display:none!important}html[data-language='ko'] .localized-text__en{display:none!important}html[data-language='ko'] .localized-text__ko{display:inline!important}html[data-language='ko'] .localized-text--block>.localized-text__ko{display:block!important}.language-toggle{position:relative;isolation:isolate;overflow:hidden}.language-toggle::before{content:'';position:absolute;z-index:0;top:3px;bottom:3px;left:3px;width:calc(50% - 3px);border-radius:999px;background:var(--white);box-shadow:0 1px 7px rgba(0,0,0,.28);transform:translateX(0);transition:transform .34s cubic-bezier(.22,1,.36,1)}.language-toggle--ko::before{transform:translateX(100%)}.language-toggle button,.language-toggle button.is-active{position:relative;z-index:1;background:transparent;box-shadow:none}.language-toggle button.is-active{color:var(--black)}.language-toggle button:not(.is-active):hover{color:var(--white)}
+@media(max-width:700px){.home .hero-copy{top:19%}.hero-artist-name{font-size:30px;margin-bottom:14px}.hero-artist-name small{font-size:13px}.home .hero h1{font-size:clamp(34px,10vw,46px);line-height:1.08}.hero-note{max-width:280px;margin-top:24px;font-size:14px;line-height:1.5}.hero-cta{margin-top:18px}.hero-work-caption{bottom:126px;font-size:10px}.hero-work-caption span:last-child{display:none}.home-footer{gap:4px 14px;padding:12px!important;font-size:10px}.home-footer a{min-height:40px;font-size:10px}.home-footer span:nth-child(2){font-size:10px}.language-toggle::before{top:4px;bottom:4px;left:4px;width:calc(50% - 4px)}}
 
 @media(max-width:700px){.hero-work-caption>span:first-child>.localized-text{display:inline}.hero-work-caption>span:last-child{display:none}.hero-work-caption>span:first-child .localized-text__en{display:inline}html[data-language='ko'] .hero-work-caption>span:first-child .localized-text__en{display:none}html[data-language='ko'] .hero-work-caption>span:first-child .localized-text__ko{display:inline}}
 
@@ -110,23 +110,35 @@ main > .home-chrome .home-header{
 
 /* Supporting copy sits right on desktop; stacks into the main copy column on mobile. */
 .hero-copy,.hero-actions,.scroll-cue,.home-colophon{z-index:3}
-.hero-actions{position:absolute;left:auto;right:6vw;top:48%;z-index:3;width:min(22rem,32vw);margin:0;text-align:left}
+.hero-actions{position:absolute;left:auto;right:6vw;top:42%;z-index:3;width:min(28rem,36vw);margin:0;text-align:left}
 .hero-actions .hero-note{max-width:none;margin:0;font-size:15px;line-height:1.55;color:#e7e5df}
 .hero-actions .hero-note strong,.hanja{font-family:'Nanum Myeongjo',Georgia,serif;font-weight:500;font-style:normal}
 .home .hero-actions .hero-cta{margin:22px 0 0;margin-left:0}
 .home-content--ready .hero-actions,.home-content--ready .home-colophon{animation:copy-reveal .78s .28s cubic-bezier(.16,1,.3,1) both}
 
 /* Home statement: Latin = Cormorant Garamond; Hangul/Hanja = Nanum Myeongjo. */
-.hero h1{display:block;font-size:clamp(92px,16vw,248px);line-height:.78;letter-spacing:-.06em;font-weight:400}
+.hero h1{display:block;font-size:clamp(40px,6.2vw,92px);line-height:1.02;letter-spacing:-.045em;font-weight:400;max-width:14ch}
+.hero h1 .localized-text{display:block}
 .hero h1 .localized-text__en{display:block}
-.hero h1 .localized-text__ko{display:none}
-html[data-language='ko'] .hero h1 .localized-text__en{display:none}
-html[data-language='ko'] .hero h1 .localized-text__ko{display:block}
-.hero-remember{font-family:'Cormorant Garamond','Nanum Myeongjo',Georgia,serif;font-style:normal;font-weight:400;letter-spacing:-.04em}
-.hero-remember i{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;font-size:1em;letter-spacing:inherit;line-height:inherit;margin:0}
-.hero h1 .hero-remember i{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic}
-html[data-language='ko'] .hero-remember{font-family:'Nanum Myeongjo',Georgia,serif;font-style:normal;font-weight:700;letter-spacing:-.08em}
-html[data-language='ko'] .hero-remember i{font-style:normal}
+.hero h1 .localized-text__ko{display:none!important}
+html[data-language='ko'] .hero h1 .localized-text__en{display:none!important}
+html[data-language='ko'] .hero h1 .localized-text__ko{display:block!important}
+.hero-headline{font-family:'Cormorant Garamond','Nanum Myeongjo',Georgia,serif;font-style:normal;font-weight:400;letter-spacing:-.04em}
+.hero-headline i{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;font-size:1em;letter-spacing:inherit;line-height:inherit;margin:0}
+.hero h1 .hero-headline i{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic}
+html[data-language='ko'] .hero-headline{font-family:'Nanum Myeongjo',Georgia,serif;font-style:normal;font-weight:700;letter-spacing:-.06em;max-width:12ch}
+html[data-language='ko'] .hero-headline i{font-style:normal}
+.hero-support{margin:18px 0 0;font:13px/1.55 Manrope,Arial,sans-serif;color:rgba(244,243,239,.72);max-width:28rem}
+.home .hero-actions .hero-note{max-width:28rem}
+.page-intro-body{margin:28px 0 0;max-width:38rem;font-size:16px;line-height:1.65;color:#cbc9c3}
+.artist-bio{display:grid;gap:18px}
+.artist-bio p{margin:0;font-size:16px;line-height:1.65;color:#cbc9c3}
+.artist-career-list{margin:0;padding:0;list-style:none;display:grid;gap:14px}
+.artist-career-list li{font-size:15px;line-height:1.55;color:#cbc9c3;padding-left:1.1em;position:relative}
+.artist-career-list li::before{content:'';position:absolute;left:0;top:.55em;width:6px;height:1px;background:var(--white)}
+.artist-career-note{margin:22px 0 0;font:11px/1.55 'DM Mono',monospace;letter-spacing:.04em;color:var(--gray)}
+.detail-source{margin:22px 0 0;font:11px/1.55 'DM Mono',monospace;letter-spacing:.04em;color:var(--gray);max-width:28rem}
+.art-image--plate{filter:grayscale(1)!important}
 
 /* Home chrome: account for 1px borders inside border-box so toggle inset is equal on all sides. */
 .home-chrome{position:absolute;top:18px;left:18px;right:18px;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:12px;pointer-events:none}
@@ -146,7 +158,7 @@ html[data-language='ko'] .hero-remember i{font-style:normal}
   .hero-actions{top:auto;bottom:148px;left:5vw;right:auto;width:min(280px,78vw);text-align:left}
   .hero-actions .hero-note{font-size:14px;line-height:1.5}
   .home .hero-actions .hero-cta{margin:16px 0 0;margin-left:0}
-  .home .hero h1{font-size:clamp(72px,22vw,96px);line-height:.86;letter-spacing:-.04em}
+  .home .hero h1{font-size:clamp(34px,10vw,48px);line-height:1.08;letter-spacing:-.04em;max-width:11ch}
   .home-chrome{top:12px;left:12px;right:12px;gap:8px}
   .home-chrome .home-header{height:52px}
   .home-header--primary{padding:0 14px 0 16px}
@@ -164,3 +176,41 @@ html[data-language='ko'] .hero-remember i{font-style:normal}
   .hero-cta:hover{letter-spacing:.08em}
 }
 
+
+
+@media(max-width:700px){
+  .work-card .card-meta{display:grid;grid-template-columns:auto 1fr;grid-template-areas:'num title' 'year year' 'medium medium';gap:6px 12px;align-items:start}
+  .work-card .card-meta span:nth-child(1){grid-area:num}
+  .work-card .card-meta span:nth-child(2){grid-area:title}
+  .work-card .card-meta span:nth-child(3){grid-area:year;color:var(--gray)}
+  .work-card .card-meta span:nth-child(3):empty{display:none}
+  .work-card>p{grid-area:medium;margin:0;padding:0}
+  .work-card{display:grid;gap:0}
+}
+.work-card .art-image{position:relative;overflow:hidden;background:#151515}
+.work-card .art-image img,.detail-image img,.work-pagination-thumb img{width:100%;height:100%;object-fit:cover;display:block;filter:inherit}
+.art-image--plate img{filter:grayscale(1)}
+.site-header nav a[aria-current='page']{opacity:1;border-bottom:1px solid var(--white);font-weight:600}
+.home-header nav a[aria-current='page']{opacity:1;box-shadow:inset 0 -1px 0 var(--white);font-weight:600}
+.artist-contact{margin-top:28px;display:grid;gap:10px}
+.artist-contact a{font:11px 'DM Mono',monospace;letter-spacing:.08em;border-bottom:1px solid rgba(244,243,239,.45);padding-bottom:4px;width:fit-content;transition:opacity .25s,border-color .25s}
+.artist-contact a:hover{opacity:.55;border-color:var(--white)}
+.artist-practice{margin-top:18px;max-width:38rem;font-size:16px;line-height:1.65;color:#cbc9c3}
+.detail-nav{display:flex;flex-wrap:wrap;gap:18px 28px;margin-top:36px}
+
+
+.art-image{position:relative;overflow:hidden;background:#111}
+.art-image img,.art-image .art-image__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.work-card .card-meta__title{min-width:0}
+.work-card .card-meta__year:empty{display:none}
+@media(max-width:700px){
+  .work-card .card-meta{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:12px;row-gap:6px;align-items:baseline}
+  .work-card .card-meta__index{grid-column:1;grid-row:1}
+  .work-card .card-meta__title{grid-column:2;grid-row:1}
+  .work-card .card-meta__year{grid-column:1/-1;grid-row:2;text-align:left}
+  .work-card .card-meta__material{margin:8px 0 0;grid-column:1/-1}
+}
+
+.work-card--installation .art-image img,.work-card--installation .art-image .art-image__img{object-fit:contain;background:#0f0f0f;padding:4%}
+.work-card--installation::after{content:'INSTALLATION VIEW';display:block;margin-top:8px;font:10px 'DM Mono',monospace;letter-spacing:.08em;color:var(--gray)}
+html[data-language='ko'] .work-card--installation::after{content:'설치 · 전경 사진'}

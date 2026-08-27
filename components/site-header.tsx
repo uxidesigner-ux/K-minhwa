@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { LanguageToggle } from '@/components/language-toggle';
 
 type SiteHeaderProps = {
@@ -10,13 +13,17 @@ type SiteHeaderProps = {
 };
 
 function Navigation() {
+  const pathname = usePathname();
+  const onWorks = pathname === '/works' || pathname.startsWith('/works/');
+  const onArtist = pathname === '/artist' || pathname.startsWith('/artist/');
+
   return (
-    <nav>
-      <Link href="/works">
+    <nav aria-label="Primary">
+      <Link href="/works" aria-current={onWorks ? 'page' : undefined}>
         <span className="i18n-en">WORKS</span>
         <span className="i18n-ko">작품</span>
       </Link>
-      <Link href="/artist">
+      <Link href="/artist" aria-current={onArtist ? 'page' : undefined}>
         <span className="i18n-en">ARTIST</span>
         <span className="i18n-ko">작가</span>
       </Link>
