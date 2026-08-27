@@ -125,6 +125,27 @@ export const pageMeta = {
   siteName: '雲住 — K-minhwa',
   siteUrl: 'https://k-minhwa.art',
   defaultOgImage: '/media/og-default.jpg',
+  defaultOgAlt: '雲住 金慧震 — Korean minhwa artist',
+  artistName: {
+    hanja: '雲住 金慧震',
+    hangul: '운주 김혜진',
+    en: 'Unjoo Kim Hyejin',
+  },
+  tagline: {
+    ko: '한국 민화 작가',
+    en: 'Korean minhwa artist',
+  },
+  keywords: [
+    'K-minhwa',
+    'minhwa',
+    'Korean minhwa',
+    '雲住',
+    '金慧震',
+    '운주 김혜진',
+    'Unjoo Kim Hyejin',
+    'Korean folk painting',
+    'contemporary minhwa',
+  ],
   home: {
     title: {
       ko: '雲住 — 오래된 상징, 새로운 숨결',
