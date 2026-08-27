@@ -24,13 +24,13 @@ export default function Artist() {
   const { artist } = siteCopy;
   return (
     <main>
-      <SiteHeader wordmark="雲住" split edition="" />
+      <SiteHeader wordmark="雲姝" split edition="" />
       <div className="page-intro artist-intro">
         <p className="eyebrow">
           <LocalizedText en={artist.eyebrow.en} ko={artist.eyebrow.ko} />
         </p>
         <p className="artist-name-display">
-          <span className="hanja">雲住 金慧震</span>
+          <span className="hanja">雲姝 金慧震</span>
           <small>운주 김혜진</small>
         </p>
         <h1>
@@ -95,7 +95,7 @@ export default function Artist() {
         </div>
       </section>
       <footer className="site-footer">
-        <span className="hanja">雲住 金慧震</span>
+        <span className="hanja">雲姝 金慧震</span>
         <span> / K—MINHWA</span>
         <Link href="/works">
           <LocalizedText en="WORKS" ko="작품" /> ↗

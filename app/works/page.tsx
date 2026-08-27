@@ -25,10 +25,10 @@ export default function Works() {
   const { works: copy } = siteCopy;
   return (
     <main>
-      <SiteHeader wordmark="雲住" split edition="" />
+      <SiteHeader wordmark="雲姝" split edition="" />
       <div className="page-intro">
         <p className="eyebrow">
-          <LocalizedText en="WORKS / 雲住 金慧震" ko="작품 / 雲住 金慧震" />
+          <LocalizedText en="WORKS / 雲姝 金慧震" ko="작품 / 雲姝 金慧震" />
         </p>
         <h1>
           <LocalizedText
@@ -49,7 +49,7 @@ export default function Works() {
       </div>
       <PublishedWorks />
       <footer className="site-footer">
-        <span className="hanja">雲住 金慧震</span>
+        <span className="hanja">雲姝 金慧震</span>
         <span> / K—MINHWA</span>
         <Link href="/artist">
           <LocalizedText en="ARTIST" ko="작가" /> ↗
