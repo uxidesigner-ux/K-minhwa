@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { HomeShell } from '@/components/home-shell';
-import { CustomCursor } from '@/components/custom-cursor';
 import { HeroMedia } from '@/components/hero-media';
 import { HeroParticles } from '@/components/hero-particles';
 import { HeroWebgl } from '@/components/hero-webgl';
@@ -10,7 +9,6 @@ import { SiteHeader } from '@/components/site-header';
 export default function Home() {
   return (
     <HomeShell>
-      <CustomCursor />
       <main className="home">
         <section className="hero" aria-label="Homepage introduction">
           <HeroMedia />

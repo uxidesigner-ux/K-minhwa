@@ -40,7 +40,9 @@ export function CustomCursor() {
 
   return (
     <div className="custom-cursor" ref={cursorRef} data-visible="false" aria-hidden="true">
-      <i />
+      <span className="custom-cursor__ring">
+        <i />
+      </span>
       <b />
     </div>
   );
