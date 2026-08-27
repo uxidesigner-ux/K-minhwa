@@ -5,8 +5,19 @@ import { HeroParticles } from '@/components/hero-particles';
 import { HeroWebgl } from '@/components/hero-webgl';
 import { LocalizedText } from '@/components/localized-text';
 import { SiteHeader } from '@/components/site-header';
+import { siteCopy } from '@/lib/content';
+
+function Lines({ text }: { text: string }) {
+  return text.split('\n').map((line, index) => (
+    <span key={`${line}-${index}`}>
+      {index > 0 && <br />}
+      {line}
+    </span>
+  ));
+}
 
 export default function Home() {
+  const { home } = siteCopy;
   return (
     <HomeShell>
       <main className="home">
@@ -22,39 +33,34 @@ export default function Home() {
             <h1>
               <LocalizedText
                 en={
-                  <span className="hero-remember">
-                    Re<i>mem</i>ber
+                  <span className="hero-headline">
+                    Old symbols,
+                    <br />
+                    <i>newly alive.</i>
                   </span>
                 }
-                ko={<span className="hero-remember">기억</span>}
+                ko={
+                  <span className="hero-headline">
+                    <Lines text={home.headline.ko} />
+                  </span>
+                }
               />
             </h1>
           </div>
           <div className="hero-actions">
             <p className="hero-note">
-              <LocalizedText
-                en={
-                  <>
-                    An image archive by <strong className="hanja">雲住 金慧震</strong>, where old symbols find new weather.
-                  </>
-                }
-                ko={
-                  <>
-                    <strong className="hanja">雲住 金慧震</strong>이 오래된 상징에 새로운 날씨를 더해 만드는 이미지 아카이브.
-                  </>
-                }
-              />
+              <LocalizedText en={home.introduction.en} ko={home.introduction.ko} />
+            </p>
+            <p className="hero-support">
+              <LocalizedText en={home.support.en} ko={home.support.ko} />
             </p>
             <Link className="hero-cta" href="/works">
-              <LocalizedText en="ENTER ARCHIVE" ko="작품 보기" /> <span>↗</span>
+              <LocalizedText en={home.cta.en} ko={home.cta.ko} /> <span>↗</span>
             </Link>
           </div>
           <div className="hero-work-caption">
             <span>
-              <LocalizedText en="UNTITLED — DRAGON AND CLOUDS" ko="무제 — 용과 구름" />
-            </span>
-            <span>
-              <LocalizedText en="YEAR / MATERIAL / DIMENSIONS TO BE CONFIRMED" ko="연도 / 재료 / 크기 확인 중" />
+              <LocalizedText en={home.heroCaption.en} ko={home.heroCaption.ko} />
             </span>
           </div>
           <p className="sr-only">

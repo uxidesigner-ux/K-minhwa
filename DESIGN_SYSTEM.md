@@ -4,7 +4,7 @@
 `#0B0B0B` black canvas · `#F4F3EF` warm white type · `#9B9A96` secondary text · `rgba(244,243,239,.22)` hairlines. No UI color accents.
 
 ## Type
-Manrope is the workhorse sans for navigation and body copy. DM Mono is used for metadata, indexes, and utility labels. The home statement is 명조: Cormorant Garamond for Latin (`Remember`, with italic only on the inner `mem` of `Re-mem-ber`) and Nanum Myeongjo for Hangul (`기억`, never italic). Hanja (`雲住`, `金慧震`) uses Nanum Myeongjo in both locales. Display type is fluid with a negative tracking value and compact line-height. The home wordmark is `雲住`. Hangul artist naming (`운주 김혜진`) is reserved for the artist page.
+Manrope is the workhorse sans for navigation and body copy. DM Mono is used for metadata, indexes, and utility labels. The home statement is 명조: Cormorant Garamond for Latin display lines (selective italic on a secondary phrase) and Nanum Myeongjo for Hangul (never italic). Hanja (`雲住`, `金慧震`) uses Nanum Myeongjo in both locales. Display type is fluid with a negative tracking value and compact line-height. The home wordmark is `雲住`. Hangul artist naming (`운주 김혜진`) is reserved for the artist page.
 
 ## Layout
 Desktop uses a 12-column grid with 3vw gutters. Editorial modules can intentionally offset or span partial columns. Mobile collapses to a single image column with generous vertical pacing. Spacing units are based on viewport width for exhibition-scale breathing room: 3vw utility, 6vw section edge, 10–16vw editorial separation.

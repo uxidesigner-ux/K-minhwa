@@ -32,7 +32,7 @@ Use 12 columns on desktop, 8 on tablet, and 4 on mobile. Approximately 70% of mo
 | Property | Requirement |
 | --- | --- |
 | Media | One full-screen artwork video or still; colored media is the hero’s only strong color. |
-| Copy | Display word (`Remember` / `기억`) and max 155-character supporting sentence. |
+| Copy | Display statement (`Old symbols, newly alive.` / `오래된 상징, 새로운 숨결`), introduction, supporting line, and CTA. |
 | Desktop pointer | Hero media shifts at most 12px per axis; copy and header do not shift. |
 | Motion | 450–700ms eased return; no loop required for a still. |
 | Touch | No pointer drift; media stays stable. |
