@@ -16,6 +16,7 @@ type IndexWork = {
   image: string;
   imageAlt: { ko: string; en: string };
   imageConfirmed: boolean;
+  presentation?: 'artwork' | 'installation';
 };
 
 const fallbackWorks: IndexWork[] = previewWorks.map((work) => ({
@@ -27,6 +28,7 @@ const fallbackWorks: IndexWork[] = previewWorks.map((work) => ({
   image: work.image,
   imageAlt: work.imageAlt,
   imageConfirmed: work.imageConfirmed,
+  presentation: work.presentation,
 }));
 
 function toIndexWork(work: Work): IndexWork {
@@ -78,6 +80,7 @@ export function PublishedWorks() {
             year={work.year}
             medium={work.medium}
             isPlaceholder={!work.imageConfirmed}
+            className={work.presentation === 'installation' ? 'work-card--installation' : ''}
           />
         ))}
       </div>

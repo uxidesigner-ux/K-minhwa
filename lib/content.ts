@@ -15,6 +15,8 @@ export type CatalogueWork = {
   year?: string;
   medium?: string;
   sourceNote?: LocaleText;
+  /** Artwork front plate vs installation/context view. */
+  presentation?: 'artwork' | 'installation';
 };
 
 export const siteCopy = {
@@ -28,8 +30,8 @@ export const siteCopy = {
       en: 'Unjoo Kim Hyejin is rooted in the traditional techniques and symbolic language of minhwa. Through new colors, compositions, and interpretations, she continues to shape a visual world distinctly her own.',
     },
     cta: {
-      ko: '작품 아카이브 보기',
-      en: 'ENTER THE ARCHIVE',
+      ko: '작품 보기',
+      en: 'ENTER ARCHIVE',
     },
     support: {
       ko: '전통의 문법 위에서 다시 피어나는 오늘의 민화.',
@@ -93,9 +95,64 @@ export const siteCopy = {
         'Collaborative and commissioned works',
       ],
       note: {
-        ko: '대회명·주최기관·수상명·연도·전시명은 확인 후 구체 표기로 교체합니다.',
-        en: 'Competition names, organizers, awards, years, and exhibition titles will replace this outline once verified.',
+        ko: '대회명·주최기관·수상명·연도·전시명·소장처는 확인 후 구체 표기로 교체합니다.',
+        en: 'Competition names, organizers, awards, years, exhibition titles, and collections will replace this outline once verified.',
       },
+    },
+    practice: {
+      ko: '운주의 작업 세계는 민화의 전통 문법 위에서 색채와 구성을 다시 살피며, 길상의 상징이 오늘의 감정과 기억으로 이어지도록 하는 데 있습니다.',
+      en: 'Her practice revisits minhwa’s traditional grammar through color and composition, so auspicious symbols can carry today’s emotions and memories.',
+    },
+    contact: {
+      label: {
+        ko: '문의',
+        en: 'INQUIRY',
+      },
+      body: {
+        ko: '전시·협업·작품 문의는 아래로 연락해 주세요. 갤러리 또는 대표 문의 경로는 확인되는 대로 공개합니다.',
+        en: 'For exhibitions, collaborations, and artwork inquiries, please get in touch. Gallery or representative contact details will be published when confirmed.',
+      },
+      email: 'hello@k-minhwa.art',
+      emailNote: {
+        ko: '임시 문의 주소 — 공식 연락처 확인 후 교체',
+        en: 'Temporary inquiry address — replace when the official contact is confirmed',
+      },
+    },
+  },
+} as const;
+
+export const pageMeta = {
+  siteName: '雲住 — K-minhwa',
+  siteUrl: 'https://k-minhwa.art',
+  defaultOgImage: '/media/og-default.jpg',
+  home: {
+    title: {
+      ko: '雲住 — 오래된 상징, 새로운 숨결',
+      en: '雲住 — Old symbols, newly alive',
+    },
+    description: {
+      ko: '운주 김혜진의 동시대 민화 아카이브. 전통의 화법과 상징 위에서 새로운 색채와 구성을 선보입니다.',
+      en: 'A moving archive of contemporary Korean minhwa by Unjoo Kim Hyejin — rooted in tradition, renewed through color and composition.',
+    },
+  },
+  works: {
+    title: {
+      ko: '작품 — 雲住 김혜진',
+      en: 'Works — 雲住 Unjoo Kim Hyejin',
+    },
+    description: {
+      ko: '운주의 민화 작품 아카이브. 복과 장수, 지혜와 평안의 상징을 오늘의 감각으로 다시 바라봅니다.',
+      en: 'Browse Unjoo’s minhwa archive — symbols of fortune, longevity, wisdom, and peace revisited through contemporary color and rhythm.',
+    },
+  },
+  artist: {
+    title: {
+      ko: '작가 — 雲住 김혜진',
+      en: 'Artist — 雲住 Unjoo Kim Hyejin',
+    },
+    description: {
+      ko: '민화의 전통적 화법과 상징 체계를 바탕으로 작업하는 운주 김혜진의 소개, 이력, 문의.',
+      en: 'About Unjoo Kim Hyejin — practice rooted in minhwa technique and symbol, with selected activity and inquiry.',
     },
   },
 } as const;
@@ -211,6 +268,7 @@ export const works: CatalogueWork[] = [
   },
   {
     slug: 'pair-of-chaekgeori',
+    presentation: 'installation',
     title: { ko: '마주 보는 책거리', en: 'A Pair of Chaekgeori' },
     description: {
       ko: '한 쌍의 책거리가 서로를 마주 보며 하나의 넓은 공간을 만든다. 반복되는 책과 기물은 지식이 쌓이는 시간을 보여주고, 대칭과 변주의 구성은 전통과 현재가 나누는 대화를 상징한다.',

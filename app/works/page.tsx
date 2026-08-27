@@ -1,8 +1,16 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { LocalizedText } from '@/components/localized-text';
 import { PublishedWorks } from '@/components/published-works';
 import { SiteHeader } from '@/components/site-header';
-import { siteCopy } from '@/lib/content';
+import { pageMeta, siteCopy } from '@/lib/content';
+import { buildPageMetadata } from '@/lib/seo';
+
+export const metadata: Metadata = buildPageMetadata({
+  title: pageMeta.works.title.en,
+  description: pageMeta.works.description.en,
+  path: '/works',
+});
 
 function Lines({ text }: { text: string }) {
   return text.split('\n').map((line, index) => (
@@ -24,6 +32,7 @@ export default function Works() {
         </p>
         <h1>
           <LocalizedText
+            block
             en={
               <>
                 The archive,

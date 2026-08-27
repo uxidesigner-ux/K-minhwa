@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { HomeShell } from '@/components/home-shell';
 import { HeroMedia } from '@/components/hero-media';
@@ -5,7 +6,14 @@ import { HeroParticles } from '@/components/hero-particles';
 import { HeroWebgl } from '@/components/hero-webgl';
 import { LocalizedText } from '@/components/localized-text';
 import { SiteHeader } from '@/components/site-header';
-import { siteCopy } from '@/lib/content';
+import { pageMeta, siteCopy } from '@/lib/content';
+import { buildPageMetadata } from '@/lib/seo';
+
+export const metadata: Metadata = buildPageMetadata({
+  title: pageMeta.home.title.en,
+  description: pageMeta.home.description.en,
+  path: '/',
+});
 
 function Lines({ text }: { text: string }) {
   return text.split('\n').map((line, index) => (
@@ -32,6 +40,7 @@ export default function Home() {
             </p>
             <h1>
               <LocalizedText
+                block
                 en={
                   <span className="hero-headline">
                     Old symbols,
@@ -55,7 +64,8 @@ export default function Home() {
               <LocalizedText en={home.support.en} ko={home.support.ko} />
             </p>
             <Link className="hero-cta" href="/works">
-              <LocalizedText en={home.cta.en} ko={home.cta.ko} /> <span>↗</span>
+              <LocalizedText en={home.cta.en} ko={home.cta.ko} />
+              <span aria-hidden="true"> ↗</span>
             </Link>
           </div>
           <div className="hero-work-caption">
