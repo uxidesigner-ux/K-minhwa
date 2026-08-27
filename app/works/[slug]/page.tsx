@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const work = works.find((item) => item.slug === slug);
   if (!work) return {};
   return buildPageMetadata({
-    title: `${work.title.en} · 雲住`,
+    title: `${work.title.en} · 雲姝`,
     description: work.description.en.slice(0, 160),
     path: `/works/${work.slug}`,
     image: work.imageConfirmed ? work.image : undefined,
@@ -36,7 +36,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
 
   return (
     <main>
-      <SiteHeader wordmark="雲住" split edition="" />
+      <SiteHeader wordmark="雲姝" split edition="" />
       <section className="detail">
         <div className={`detail-image art-image${work.imageConfirmed ? '' : ' art-image--plate'}`}>
           {work.image.endsWith('.svg') ? (

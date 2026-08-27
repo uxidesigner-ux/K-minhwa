@@ -33,10 +33,10 @@ export default function Home() {
           <HeroMedia />
           <HeroWebgl />
           <HeroParticles />
-          <SiteHeader wordmark="雲住" split edition="" />
+          <SiteHeader wordmark="雲姝" split edition="" />
           <div className="hero-copy">
             <p className="hero-artist-name">
-              <span className="hanja">雲住 金慧震</span>
+              <span className="hanja">雲姝 金慧震</span>
             </p>
             <h1>
               <LocalizedText
@@ -74,7 +74,7 @@ export default function Home() {
             </span>
           </div>
           <p className="sr-only">
-            Hero artwork: a blue-green dragon moving through layered cream and brown clouds, by 雲住 金慧震.
+            Hero artwork: a blue-green dragon moving through layered cream and brown clouds, by 雲姝 金慧震.
           </p>
           <p className="home-colophon">© K-MINHWA UNJOO.</p>
         </section>

@@ -122,14 +122,14 @@ export const siteCopy = {
 } as const;
 
 export const pageMeta = {
-  siteName: '雲住 — K-minhwa',
+  siteName: '雲姝 — K-minhwa',
   // Live deployment host until k-minhwa.art is registered and pointed at Vercel.
   // Override with NEXT_PUBLIC_SITE_URL=https://k-minhwa.art after the custom domain resolves.
   siteUrl: 'https://k-minhwa.vercel.app',
   defaultOgImage: '/media/og-default.jpg',
-  defaultOgAlt: '雲住 金慧震 — Korean minhwa artist',
+  defaultOgAlt: '雲姝 金慧震 — Korean minhwa artist',
   artistName: {
-    hanja: '雲住 金慧震',
+    hanja: '雲姝 金慧震',
     hangul: '운주 김혜진',
     en: 'Unjoo Kim Hyejin',
   },
@@ -141,7 +141,7 @@ export const pageMeta = {
     'K-minhwa',
     'minhwa',
     'Korean minhwa',
-    '雲住',
+    '雲姝',
     '金慧震',
     '운주 김혜진',
     'Unjoo Kim Hyejin',
@@ -150,8 +150,8 @@ export const pageMeta = {
   ],
   home: {
     title: {
-      ko: '雲住 — 오래된 상징, 새로운 숨결',
-      en: '雲住 — Old symbols, newly alive',
+      ko: '雲姝 — 오래된 상징, 새로운 숨결',
+      en: '雲姝 — Old symbols, newly alive',
     },
     description: {
       ko: '운주 김혜진의 동시대 민화 아카이브. 전통의 화법과 상징 위에서 새로운 색채와 구성을 선보입니다.',
@@ -160,8 +160,8 @@ export const pageMeta = {
   },
   works: {
     title: {
-      ko: '작품 — 雲住 김혜진',
-      en: 'Works — 雲住 Unjoo Kim Hyejin',
+      ko: '작품 — 雲姝 김혜진',
+      en: 'Works — 雲姝 Unjoo Kim Hyejin',
     },
     description: {
       ko: '운주의 민화 작품 아카이브. 복과 장수, 지혜와 평안의 상징을 오늘의 감각으로 다시 바라봅니다.',
@@ -170,8 +170,8 @@ export const pageMeta = {
   },
   artist: {
     title: {
-      ko: '작가 — 雲住 김혜진',
-      en: 'Artist — 雲住 Unjoo Kim Hyejin',
+      ko: '작가 — 雲姝 김혜진',
+      en: 'Artist — 雲姝 Unjoo Kim Hyejin',
     },
     description: {
       ko: '민화의 전통적 화법과 상징 체계를 바탕으로 작업하는 운주 김혜진의 소개, 이력, 문의.',

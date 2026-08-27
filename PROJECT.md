@@ -5,7 +5,7 @@ K-minhwa is a contemporary portfolio and moving archive for a Korean minhwa arti
 
 ## Information architecture
 
-- `/` — cinematic homepage for the 雲住 portfolio: hero statement, selected works entry, artist entry point.
+- `/` — cinematic homepage for the 雲姝 portfolio: hero statement, selected works entry, artist entry point.
 - `/works` — editorial index of all works with year, medium, and image-led composition.
 - `/works/[slug]` — work detail with primary media, metadata, and contextual text.
 - `/artist` — statement, biography, exhibitions, awards, and collections.
@@ -23,7 +23,7 @@ No stock image may be presented as a K-minhwa artwork. Until original artwork ph
 - Canonical host: currently `https://k-minhwa.vercel.app` (override with `NEXT_PUBLIC_SITE_URL`).
 - Custom domain `k-minhwa.art` is the intended brand host once registered and attached in Vercel Domains; until DNS resolves, share metadata must not point at it.
 - Favicon / app icons: black field with white Hanja `金`.
-- Default Open Graph image (`/media/og-default.jpg`): black field, centered `雲住 金慧震`, English tagline `Korean minhwa artist`.
+- Default Open Graph image (`/media/og-default.jpg`): black field, centered `雲姝 金慧震`, English tagline `Korean minhwa artist`.
 - Page metadata, sitemap, robots, and JSON-LD emit absolute URLs so shared links resolve to the live host.
 
 
