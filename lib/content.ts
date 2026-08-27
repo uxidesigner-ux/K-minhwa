@@ -123,7 +123,9 @@ export const siteCopy = {
 
 export const pageMeta = {
   siteName: '雲住 — K-minhwa',
-  siteUrl: 'https://k-minhwa.art',
+  // Live deployment host until k-minhwa.art is registered and pointed at Vercel.
+  // Override with NEXT_PUBLIC_SITE_URL=https://k-minhwa.art after the custom domain resolves.
+  siteUrl: 'https://k-minhwa.vercel.app',
   defaultOgImage: '/media/og-default.jpg',
   defaultOgAlt: '雲住 金慧震 — Korean minhwa artist',
   artistName: {
