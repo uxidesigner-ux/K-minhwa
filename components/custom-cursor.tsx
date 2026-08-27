@@ -38,5 +38,10 @@ export function CustomCursor() {
     };
   }, []);
 
-  return <div className="custom-cursor" ref={cursorRef} data-visible="false" aria-hidden="true"><i/></div>;
+  return (
+    <div className="custom-cursor" ref={cursorRef} data-visible="false" aria-hidden="true">
+      <i />
+      <b />
+    </div>
+  );
 }

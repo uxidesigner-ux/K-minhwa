@@ -19,7 +19,7 @@ export default function Home() {
           <SiteHeader wordmark="雲住" split edition="" />
           <div className="hero-copy">
             <p className="hero-artist-name">
-              <span>雲住 金慧震</span>
+              <span className="hanja">雲住 金慧震</span>
             </p>
             <h1>
               <LocalizedText
@@ -37,12 +37,12 @@ export default function Home() {
               <LocalizedText
                 en={
                   <>
-                    An image archive by <strong>雲住 金慧震</strong>, where old symbols find new weather.
+                    An image archive by <strong className="hanja">雲住 金慧震</strong>, where old symbols find new weather.
                   </>
                 }
                 ko={
                   <>
-                    <strong>雲住 金慧震</strong>이 오래된 상징에 새로운 날씨를 더해 만드는 이미지 아카이브.
+                    <strong className="hanja">雲住 金慧震</strong>이 오래된 상징에 새로운 날씨를 더해 만드는 이미지 아카이브.
                   </>
                 }
               />

@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-const MAX_SHIFT = 12;
+const MAX_SHIFT = 6;
+const MOVE_THRESHOLD_PX = 10;
 
 export function HeroMedia() {
   const mediaRef = useRef<HTMLDivElement>(null);
@@ -27,8 +28,20 @@ export function HeroMedia() {
       }
       setCanAutoplay(true);
     };
+    const origin = { x: Number.NaN, y: Number.NaN };
     const move = (event: PointerEvent) => {
       if (!media || window.innerWidth < 768 || reduced.matches || !finePointer.matches) return;
+      if (Number.isNaN(origin.x) || Number.isNaN(origin.y)) {
+        origin.x = event.clientX;
+        origin.y = event.clientY;
+        return;
+      }
+      const travel = Math.hypot(event.clientX - origin.x, event.clientY - origin.y);
+      if (travel < MOVE_THRESHOLD_PX) {
+        media.style.setProperty('--hero-x', '0px');
+        media.style.setProperty('--hero-y', '0px');
+        return;
+      }
       const x = (event.clientX / window.innerWidth - 0.5) * MAX_SHIFT * 2;
       const y = (event.clientY / window.innerHeight - 0.5) * MAX_SHIFT * 2;
       media.style.setProperty('--hero-x', `${x.toFixed(1)}px`);

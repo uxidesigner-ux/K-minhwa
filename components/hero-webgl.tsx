@@ -103,6 +103,9 @@ export function HeroWebgl() {
     let ready = false;
     let size = { width: 1, height: 1, dpr: 1 };
     const pointer = { x: .5, y: .5, targetX: .5, targetY: .5, strength: 0 };
+    const lastMove = { x: Number.NaN, y: Number.NaN };
+    const MOVE_THRESHOLD_PX = 10;
+    const MAX_STRENGTH = 0.016;
 
     const resize = () => {
       const bounds = hero.getBoundingClientRect();
@@ -125,7 +128,7 @@ export function HeroWebgl() {
       gl.uniform1i(uniforms.texture, 0);
       gl.uniform2f(uniforms.resolution, size.width, size.height);
       gl.uniform2f(uniforms.pointer, pointer.x, 1 - pointer.y);
-      gl.uniform1f(uniforms.strength, Math.min(.032, pointer.strength * .032));
+      gl.uniform1f(uniforms.strength, Math.min(MAX_STRENGTH, pointer.strength * MAX_STRENGTH));
       gl.uniform1f(uniforms.mediaAspect, video.videoWidth / video.videoHeight || 16 / 9);
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
       frame = window.requestAnimationFrame(render);
@@ -138,9 +141,24 @@ export function HeroWebgl() {
     };
     const onPointerMove = (event: PointerEvent) => {
       const bounds = hero.getBoundingClientRect();
-      if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) return;
-      pointer.targetX = (event.clientX - bounds.left) / bounds.width;
-      pointer.targetY = (event.clientY - bounds.top) / bounds.height;
+      if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) {
+        lastMove.x = Number.NaN;
+        lastMove.y = Number.NaN;
+        return;
+      }
+      const nextX = (event.clientX - bounds.left) / bounds.width;
+      const nextY = (event.clientY - bounds.top) / bounds.height;
+      pointer.targetX = nextX;
+      pointer.targetY = nextY;
+      if (Number.isNaN(lastMove.x) || Number.isNaN(lastMove.y)) {
+        lastMove.x = event.clientX;
+        lastMove.y = event.clientY;
+        return;
+      }
+      const delta = Math.hypot(event.clientX - lastMove.x, event.clientY - lastMove.y);
+      if (delta < MOVE_THRESHOLD_PX) return;
+      lastMove.x = event.clientX;
+      lastMove.y = event.clientY;
       pointer.strength = 1;
     };
     const onVisibility = () => {
