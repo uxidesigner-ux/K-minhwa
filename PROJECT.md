@@ -20,18 +20,11 @@ No stock image may be presented as a K-minhwa artwork. Until original artwork ph
 
 ## SEO and share assets
 
-<<<<<<< HEAD
 - Canonical host: currently `https://k-minhwa.vercel.app` (override with `NEXT_PUBLIC_SITE_URL`).
 - Custom domain `k-minhwa.art` is the intended brand host once registered and attached in Vercel Domains; until DNS resolves, share metadata must not point at it.
 - Favicon / app icons: black field with white Hanja `金`.
 - Default Open Graph image (`/media/og-default.jpg`): black field, centered `雲住 金慧震`, English tagline `Korean minhwa artist`.
 - Page metadata, sitemap, robots, and JSON-LD emit absolute URLs so shared links resolve to the live host.
-=======
-- Canonical host: `https://k-minhwa.art` (`NEXT_PUBLIC_SITE_URL` override allowed).
-- Favicon / app icons: black field with white Hanja `金`.
-- Default Open Graph image (`/media/og-default.jpg`): black field, centered `雲住 金慧震`, English tagline `Korean minhwa artist`.
-- Page metadata, sitemap, robots, and JSON-LD emit absolute URLs so shared links resolve to the live domain.
->>>>>>> origin/main
 
 
 ## Reference translation
