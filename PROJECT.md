@@ -18,8 +18,13 @@ The public site reads published records only. Admin edits draft content, uploads
 
 No stock image may be presented as a K-minhwa artwork. Until original artwork photography/video and verified catalogue data are published in Firestore, the site renders labeled grayscale archive plates. This is intentional: the home hero can use the supplied artist video, but every work card must be traceable to an original image, title, year, material, and alt text before it receives the artwork treatment.
 
-## Direction
-UI is black, white, and grayscale. Artwork media can retain color and is the only chromatic field. Home display type is 명조; UI chrome stays sans and mono. No decorative minhwa clichés.
+## SEO and share assets
+
+- Canonical host: `https://k-minhwa.art` (`NEXT_PUBLIC_SITE_URL` override allowed).
+- Favicon / app icons: black field with white Hanja `金`.
+- Default Open Graph image (`/media/og-default.jpg`): black field, centered `雲住 金慧震`, English tagline `Korean minhwa artist`.
+- Page metadata, sitemap, robots, and JSON-LD emit absolute URLs so shared links resolve to the live domain.
+
 
 ## Reference translation
 Lama Lama's observed principles—persistent utility navigation, statement-led oversized type, hover-revealed project context, image/video-led modules, reactive buttons, and a footer-as-closing-panel—are translated into a quieter archive system. K-minhwa uses pointer drift and magnetic affordances only where they help orientation or create a sense of materiality.

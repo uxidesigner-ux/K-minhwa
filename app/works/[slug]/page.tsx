@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { LocalizedText } from '@/components/localized-text';
 import { SiteHeader } from '@/components/site-header';
-import { works } from '@/lib/content';
+import { works, pageMeta } from '@/lib/content';
 import { buildPageMetadata } from '@/lib/seo';
 
 export function generateStaticParams() {
@@ -20,6 +20,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: work.description.en.slice(0, 160),
     path: `/works/${work.slug}`,
     image: work.imageConfirmed ? work.image : undefined,
+    imageAlt: work.imageConfirmed ? work.imageAlt.en : pageMeta.defaultOgAlt,
+    type: 'article',
   });
 }
 
