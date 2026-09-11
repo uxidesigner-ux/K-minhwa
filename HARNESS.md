@@ -34,6 +34,17 @@ The public UI uses local placeholder content and external placeholder images unt
 
 ## Latest validation evidence
 
+### 2026-09-11 — pipeline and gate re-check
+
+- Typecheck (`tsc --noEmit`), lint (`eslint .`), and production build (`next build`) exited 0 on commit `24ab7fb`.
+- Build output: 23 prerendered routes, including 12 SSG work detail pages.
+- Runtime: `/`, `/works`, `/works/[slug]`, `/artist`, `/admin`, `/sitemap.xml`, and `/robots.txt` each returned HTTP 200 from `next start` against the production build.
+- SEO output resolves to the canonical host: canonical, `og:url`, `og:image`, sitemap entries, and `robots.txt` host all emit `https://k-minhwa.vercel.app` absolute URLs.
+- Delivery: the repository has no CI workflow. The only automated gate is the Vercel Git integration, which reports a `Vercel` commit status per push. Branch pushes produce preview deployments; production follows a merge into `main`.
+- **Blocked:** the live host could not be requested from the validation environment (outbound egress to `k-minhwa.vercel.app` is denied), so production serving, interaction, responsive, and console checks were not re-run against the deployed site today. Cause: sandbox network policy, not a site defect.
+
+### 2026-08-25 — interaction and responsive evidence
+
 - Lint, typecheck, and production build passed on 2026-08-25.
 - Runtime: public home, works index, and admin sign-in boundary were rendered from the production build.
 - Interaction: desktop hero pointer moved media by 4.9px / -2px in the sampled move (within the 12px maximum); mobile work media remained at scale 1 with no pointer transform.
